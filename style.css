@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', 'sans-serif';
+}
+
+body {
+    background: linear-gradient(180deg, #040918 0%, #091540 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 170vh;
+}
+
+.container {
+    width: 65%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 120px;
+}
+
+.container header {
+    background-color: hsl(226, 25%, 17%);
+    padding: 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 99%;
+    user-select: none;
+}
+
+.container header .color-mode {
+    padding: 15px;
+    background-color: hsl(225, 23%, 24%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .3s all ease;
+}
+
+.container header .color-mode:hover {
+    background-color: hsl(226, 11%, 37%);
+}
+
+.container .mode-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 0;
+    user-select: none;
+}
+
+.container .mode-wrapper .title {
+    font-size: 28px;
+    color: hsl(0, 0%, 93%);
+    font-weight: bolder;
+}
+
+.container .mode-wrapper .mods {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: end;
+    gap: 10px;
+    color: hsl(0, 0%, 93%);
+    padding-right: 20px;
+}
+
+.active {
+    background-color: hsl(3, 86%, 64%) !important;
+    border-color: hsl(3, 86%, 64%) !important;
+    color: hsl(227, 75%, 14%);
+}
+
+.active:hover {
+    background-color: hsl(3, 71%, 56%) !important;
+}
+
+.container .mode-wrapper .mods div {
+    padding: 7px 15px;
+    border-radius: 20px;
+    background-color: hsl(225, 23%, 24%);
+    transition: .3s all ease;
+    cursor: pointer;
+    border: 1px solid hsl(226, 11%, 37%);
+}
+
+.container .mode-wrapper .mods div:hover {
+    background-color: hsl(226, 11%, 37%);
+}
+
+
+/* EXTENSİONS */
+
+.container .extensions {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .extensions .extension-card {
+    width: 400px;
+    height: 230px;
+    background-color: hsl(226, 25%, 17%);
+    border: 1px solid hsl(225, 23%, 37%);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px 10px 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.extension-card.remove-anim {
+    opacity: 0 !important;
+    transform: translateY(-15px) !important;
+    transition: all 0.3s ease;
+}
+
+
+.container .extensions .extension-card .extension-top {
+    display: flex;
+}
+
+.container .extensions .extension-card .extension-top .extension-title {
+    color: hsl(0, 0%, 93%);
+    font-weight: bold;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.container .extensions .extension-card .extension-top .extension-description {
+    color: hsl(0, 0%, 67%);
+}
+
+.container .extensions .extension-card .extension-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.container .extensions .extension-card .extension-bottom .remove-btn button {
+    color: hsl(0, 0%, 93%);
+    padding: 10px 20px;
+    border: 1px solid hsl(225, 23%, 37%);
+    border-radius: 20px;
+    background-color: hsl(226, 25%, 17%);
+    cursor: pointer;
+    transition: .3s all ease;
+    font-weight: 600;
+}
+
+.container .extensions .extension-card .extension-bottom .remove-btn button:hover {
+    color: hsl(226, 25%, 17%);
+    background-color: hsl(3, 86%, 64%);
+    border-color: hsl(3, 86%, 64%);
+}
+
+.container .extensions .extension-card .extension-bottom .mode-bar {
+    width: 40px;
+    height: 22px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    background-color: hsl(226, 11%, 37%);
+    border: 1px solid hsl(226, 11%, 37%);
+    transition: .2s all ease;
+}
+
+.container .extensions .extension-card .extension-bottom .mode-bar .dot {
+    width: 18px;
+    height: 18px;
+    background-color: hsl(0, 0%, 93%);
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: .3s transform ease;
+    transform: translateX(0);
+}
+
+.container .extensions .extension-card .extension-bottom .mode-bar.active-mode {
+    background-color: hsl(3, 86%, 64%) !important;
+    border: 1px solid hsl(3, 86%, 64%) !important;
+}
+
+.container .extensions .extension-card .extension-bottom .mode-bar.active-mode .dot {
+    transform: translateX(18px);
+}
+
+
+/* LIGHT MODE */
+
+body.light-mode {
+    background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+}
+
+body.light-mode header {
+    background-color: hsl(200, 60%, 99%);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+body.light-mode header .color-mode {
+    background-color: hsl(0, 0%, 93%);
+}
+
+body.light-mode header .color-mode:hover {
+    background-color: hsl(0, 0%, 67%);
+}
+
+body.light-mode .mode-wrapper .title {
+    color: hsl(227, 75%, 14%);
+}
+
+body.light-mode .mods div.active {
+    color: hsl(0, 0%, 93%) !important;
+}
+
+body.light-mode .mods div:not([class="active"]) {
+    background-color: hsl(200, 60%, 99%);
+    border-color: hsl(0, 0%, 86%);
+    color: hsl(225, 23%, 24%);
+}
+
+body.light-mode .mods div:not([class="active"]):hover {
+    background-color: hsl(0, 0%, 93%);
+    opacity: 0.8 !important;
+}
+
+body.light-mode .logo img {
+    width: 207px;
+    height: 52px;
+}
+
+body.light-mode .extension-card {
+    background-color: hsl(200, 60%, 99%) !important;
+    border-color: hsl(0, 0%, 86%) !important;
+}
+
+body.light-mode .extension-card .extension-title {
+    color: hsl(225, 23%, 24%) !important;
+}
+
+body.light-mode .extension-card .extension-description {
+    color: hsl(226, 25%, 17%) !important;
+}
+
+body.light-mode .extension-card .remove-btn button {
+    background-color: hsl(200, 60%, 99%) !important;
+    border-color: hsl(0, 0%, 67%) !important;
+    color: hsl(226, 25%, 17%) !important;
+}
+
+body.light-mode .extension-card .remove-btn button:hover {
+    background-color: hsl(3, 86%, 64%) !important;
+    border: 1px solid hsl(3, 86%, 64%) !important;
+    color: hsl(0, 0%, 93%) !important;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1740px) {
+    body .container {
+        min-width: 1230px;
+    }
+}
+
+@media (max-width: 1250px) {
+    body .container {
+        min-width: 830px;
+    }
+}
+
+@media (max-width: 820px) {
+    body .container {
+        min-width: 200px;
+    }
+
+    .container .mode-wrapper {
+        flex-direction: column;
+        row-gap: 20px;
+        padding: 20px 0;
+    }
+
+    .extensions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 535px) {
+    body .container {
+        min-width: 338px;
+    }
+}
