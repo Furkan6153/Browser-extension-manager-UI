@@ -6,7 +6,7 @@ let currentFilter = "all";
 
 (async function fetchData() {
   try {
-    const res = await fetch("./data.json");
+    const res = await fetch("data.json");
     extensionsData = await res.json();
     renderExtensions();
   } catch (e) {
@@ -90,10 +90,10 @@ const colorModeIcon = colorModeToggle.querySelector("img");
 const body = document.body;
 const logo = document.querySelector(".logo img");
 
-const LIGHT_ICON = "/BrowserExtensionManagerUI/assets/images/icon-sun.svg"; 
-const DARK_ICON = "/BrowserExtensionManagerUI/assets/images/icon-moon.svg";
-const LIGHT_LOGO = "/BrowserExtensionManagerUI/assets/images/logo-light.png";
-const DARK_LOGO = "/BrowserExtensionManagerUI/assets/images/logo.svg"
+const LIGHT_ICON = "assets/images/icon-sun.svg"; 
+const DARK_ICON = "assets/images/icon-moon.svg";
+const LIGHT_LOGO = "assets/images/logo-light.png";
+const DARK_LOGO = "assets/images/logo.svg"
 
 function applySavedTheme() {
   const savedTheme = localStorage.getItem("theme");
